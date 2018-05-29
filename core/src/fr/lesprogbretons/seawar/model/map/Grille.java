@@ -90,6 +90,11 @@ public class Grille implements Serializable {
    public void setTableau(Case[][] tableau) {
         this.tableau = tableau;
     }
+    
+    public Case[][] getCases(){
+        return tableau;
+    }
+
    
     public Player getJoueur1() {
         return joueur1;
