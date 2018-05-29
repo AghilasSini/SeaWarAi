@@ -8,10 +8,7 @@ import fr.lesprogbretons.seawar.ia.AbstractIA;
 import fr.lesprogbretons.seawar.ia.IAAleatoire;
 import fr.lesprogbretons.seawar.ia.IAThread;
 import fr.lesprogbretons.seawar.model.Partie;
-import fr.lesprogbretons.seawar.model.actions.Action;
-import fr.lesprogbretons.seawar.model.actions.Attack;
-import fr.lesprogbretons.seawar.model.actions.MoveBoat;
-import fr.lesprogbretons.seawar.model.actions.PassTurn;
+import fr.lesprogbretons.seawar.model.actions.*;
 import fr.lesprogbretons.seawar.model.boat.Boat;
 import fr.lesprogbretons.seawar.model.cases.Case;
 import fr.lesprogbretons.seawar.model.map.Grille;
@@ -259,13 +256,11 @@ public class Controller {
     private boolean validAction(AbstractIA ia, Action action) {
         if (action instanceof PassTurn) {
             return true;
-
         } else if (action instanceof MoveBoat) {
-
             return true;
-
         } else if (action instanceof Attack) {
-
+            return true;
+        } else if (action instanceof ChangeCannon) {
             return true;
         } else {
             return false;
