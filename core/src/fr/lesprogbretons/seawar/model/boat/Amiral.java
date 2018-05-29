@@ -22,8 +22,8 @@ public class Amiral extends Boat implements Serializable {
         reloadSecCanon = 2;
     }
 
-    public Object clone() {
-        Amiral clone = new Amiral(this.getPosition(), null); // le joueur ne semble pas servir dans le modele
+    public Object clone(Case c) {
+        Amiral clone = new Amiral(c, null); // le joueur ne semble pas servir dans le modele
         clone.setAlive(this.isAlive());
         clone.setEstBloque(this.isEstBloque());
         clone.setCanonSelectionne(this.getCanonSelectionne());

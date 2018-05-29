@@ -63,24 +63,25 @@ public class Grille implements Serializable {
 
     public Object clone() {
         Grille clone = new Grille(this.getHauteur(), this.getLargeur());
-        ArrayList<Boat> nav1 = new ArrayList<>();
-        for (Boat nav : bateaux1) {
-            nav1.add((Boat) nav.clone());
-        }
-        clone.setBateaux1(nav1);
-        ArrayList<Boat> nav2 = new ArrayList<>();
-        for (Boat nav : bateaux2) {
-            nav2.add((Boat) nav.clone());
-        }
-        clone.setBateaux2(nav2);
-        clone.setJoueur1((Player) this.joueur1.clone(nav1));
-        clone.setJoueur2((Player) this.joueur2.clone(nav2));
         for (int i = 0; i < hauteur; i++) {
             for (int j = 0; j < largeur; j++) {
                 Case clone1 = (Case) this.tableau[i][j].clone();
                 clone.tableau[i][j] = clone1;
             }
         }
+        ArrayList<Boat> nav1 = new ArrayList<>();
+        for (Boat nav : bateaux1) {
+            nav1.add((Boat) nav.clone(clone.tableau[nav.getPosition().getX()][nav.getPosition().getY()]));
+        }
+        clone.setBateaux1(nav1);
+        ArrayList<Boat> nav2 = new ArrayList<>();
+        for (Boat nav : bateaux2) {
+            nav2.add((Boat) nav.clone(clone.tableau[nav.getPosition().getX()][nav.getPosition().getY()]));
+        }
+        clone.setBateaux2(nav2);
+        clone.setJoueur1((Player) this.joueur1.clone(nav1));
+        clone.setJoueur2((Player) this.joueur2.clone(nav2));
+
         return clone;
     }
 

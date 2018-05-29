@@ -22,8 +22,8 @@ public class Fregate extends Boat implements Serializable {
         reloadSecCanon = 1;
     }
 
-    public Object clone() {
-        Fregate clone = new Fregate(this.getPosition(), null); // le joueur ne semble pas servir dans le modele
+    public Object clone(Case c) {
+        Fregate clone = new Fregate(c, null); // le joueur ne semble pas servir dans le modele
         clone.setAlive(this.isAlive());
         clone.setEstBloque(this.isEstBloque());
         clone.setCanonSelectionne(this.getCanonSelectionne());
