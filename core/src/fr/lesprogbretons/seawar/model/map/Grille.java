@@ -486,14 +486,14 @@ public class Grille implements Serializable {
                     casesPorteeTir.add(this.getCaseSud(getCaseSud(getCaseSud(getCaseSud(bateauSelectionne.getPosition())))));
                 } else if (bateauSelectionne.getOrientation() == Orientation.SUDOUEST) {
                     casesPorteeTir.add(this.getCaseSudOuest(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(this.getCaseSudEst(getCaseSudEst(bateauSelectionne.getPosition())));
-                    casesPorteeTir.add(this.getCaseSudEst(getCaseSudEst(getCaseSudEst(bateauSelectionne.getPosition()))));
-                    casesPorteeTir.add(this.getCaseSudEst(getCaseSudEst(getCaseSudEst(getCaseSudEst(bateauSelectionne.getPosition())))));
+                    casesPorteeTir.add(this.getCaseSudOuest(getCaseSudOuest(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseSudOuest(getCaseSudOuest(getCaseSudOuest(bateauSelectionne.getPosition()))));
+                    casesPorteeTir.add(this.getCaseSudOuest(getCaseSudOuest(getCaseSudOuest(getCaseSudOuest(bateauSelectionne.getPosition())))));
                 } else if (bateauSelectionne.getOrientation() == Orientation.NORDOUEST) {
-                    casesPorteeTir.add(this.getCaseNordEst(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(this.getCaseNordEst(getCaseNordEst(bateauSelectionne.getPosition())));
-                    casesPorteeTir.add(this.getCaseNordEst(getCaseNordEst(getCaseNordEst(bateauSelectionne.getPosition()))));
-                    casesPorteeTir.add(this.getCaseNordEst(getCaseNordEst(getCaseNordEst(getCaseNordEst(bateauSelectionne.getPosition())))));
+                    casesPorteeTir.add(this.getCaseNordOuest(bateauSelectionne.getPosition()));
+                    casesPorteeTir.add(this.getCaseNordOuest(getCaseNordOuest(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseNordOuest(getCaseNordOuest(getCaseNordOuest(bateauSelectionne.getPosition()))));
+                    casesPorteeTir.add(this.getCaseNordOuest(getCaseNordOuest(getCaseNordOuest(getCaseNordOuest(bateauSelectionne.getPosition())))));
                 }
             } else {
                 if (bateauSelectionne.getOrientation() == Orientation.NORD) {
@@ -511,33 +511,33 @@ public class Grille implements Serializable {
                     casesPorteeTir.add(this.getCaseSudEst(bateauSelectionne.getPosition()));
                     casesPorteeTir.add(this.getCaseNordEst(getCaseSudEst(bateauSelectionne.getPosition())));
                 } else if (bateauSelectionne.getOrientation() == Orientation.SUDEST) {
-                    casesPorteeTir.add(getCaseSudEst(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(getCaseSudEst(getCaseSudEst(bateauSelectionne.getPosition())));
-                    casesPorteeTir.add(getCaseSud(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(getCaseSud(getCaseSudEst(bateauSelectionne.getPosition())));
-                    casesPorteeTir.add(getCaseNordEst(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(getCaseSudEst(getCaseNordEst(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseSudEst(bateauSelectionne.getPosition()));
+                    casesPorteeTir.add(this.getCaseSudEst(getCaseSudEst(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseSud(bateauSelectionne.getPosition()));
+                    casesPorteeTir.add(this.getCaseSud(getCaseSudEst(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseNordEst(bateauSelectionne.getPosition()));
+                    casesPorteeTir.add(this.getCaseSudEst(getCaseNordEst(bateauSelectionne.getPosition())));
                 } else if (bateauSelectionne.getOrientation() == Orientation.SUD) {
-                    casesPorteeTir.add(getCaseSud(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(getCaseSud(getCaseSud(bateauSelectionne.getPosition())));
-                    casesPorteeTir.add(getCaseSudOuest(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(getCaseSudEst(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(getCaseSud(getCaseSudOuest(bateauSelectionne.getPosition())));
-                    casesPorteeTir.add(getCaseSud(getCaseSudEst(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseSud(bateauSelectionne.getPosition()));
+                    casesPorteeTir.add(this.getCaseSud(getCaseSud(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseSudOuest(bateauSelectionne.getPosition()));
+                    casesPorteeTir.add(this.getCaseSudEst(bateauSelectionne.getPosition()));
+                    casesPorteeTir.add(this.getCaseSud(getCaseSudOuest(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseSud(getCaseSudEst(bateauSelectionne.getPosition())));
                 } else if (bateauSelectionne.getOrientation() == Orientation.SUDOUEST) {
-                    casesPorteeTir.add(getCaseSudOuest(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(getCaseSudOuest(getCaseSudOuest(bateauSelectionne.getPosition())));
-                    casesPorteeTir.add(getCaseSud(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(getCaseSudOuest(getCaseNordOuest(bateauSelectionne.getPosition())));
-                    casesPorteeTir.add(getCaseNordOuest(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(getCaseSudOuest(getCaseSud(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseSudOuest(bateauSelectionne.getPosition()));
+                    casesPorteeTir.add(this.getCaseSudOuest(getCaseSudOuest(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseSud(bateauSelectionne.getPosition()));
+                    casesPorteeTir.add(this.getCaseSudOuest(getCaseNordOuest(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseNordOuest(bateauSelectionne.getPosition()));
+                    casesPorteeTir.add(this.getCaseSudOuest(getCaseSud(bateauSelectionne.getPosition())));
                 } else if (bateauSelectionne.getOrientation() == Orientation.NORDOUEST) {
-                    casesPorteeTir.add(getCaseSudOuest(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(getCaseNordOuest(getCaseSudOuest(bateauSelectionne.getPosition())));
-                    casesPorteeTir.add(getCaseNordOuest(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(getCaseNordOuest(getCaseNordOuest(bateauSelectionne.getPosition())));
-                    casesPorteeTir.add(getCaseNord(bateauSelectionne.getPosition()));
-                    casesPorteeTir.add(getCaseNordOuest(getCaseNord(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseSudOuest(bateauSelectionne.getPosition()));
+                    casesPorteeTir.add(this.getCaseNordOuest(getCaseSudOuest(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseNordOuest(bateauSelectionne.getPosition()));
+                    casesPorteeTir.add(this.getCaseNordOuest(getCaseNordOuest(bateauSelectionne.getPosition())));
+                    casesPorteeTir.add(this.getCaseNord(bateauSelectionne.getPosition()));
+                    casesPorteeTir.add(this.getCaseNordOuest(getCaseNord(bateauSelectionne.getPosition())));
                 }
             }
 
