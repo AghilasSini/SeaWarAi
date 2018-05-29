@@ -61,7 +61,7 @@ public abstract class Boat implements Serializable {
     }
 
 
-    public abstract Object clone();
+    public abstract Object clone(Case c);
 
     /*----------------------------------------------------------------------------*/
     //Getters & Setters
