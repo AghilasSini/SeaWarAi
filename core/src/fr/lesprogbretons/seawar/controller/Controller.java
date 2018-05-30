@@ -276,6 +276,9 @@ public class Controller {
         ArrayList<Action> actions = new ArrayList<>();
         Boat boat = this.partie.getBateauSelectionne();
         // potential of the seletected boat
+        
+         //Le bateau sélectionné n'était pas mis à jour.
+        this.partie.setBateauSelectionne(this.partie.getCurrentPlayer().getBoats().get(0));
         ArrayList<Case> cases = new ArrayList<>();
 
         if (boat.getMoveAvailable() != 0 && !this.partie.getMap().getCasesDisponibles(boat.getPosition(), 1).isEmpty()) {
