@@ -169,8 +169,13 @@ public class AlphaBeta extends AbstractIA {
         ArrayList<Integer> distanceMoi = new ArrayList<>();
         ArrayList<Integer> distanceAdv = new ArrayList<>();
         ArrayList<Case> posPhare = RechercheEltIA.researchLighthouse(p);
-        Case caseBateauAdv = p.getJoueur2().getBoats().get(0).getPosition();
-
+        Case caseBateauAdv;
+        if(getNumber() == 1) {
+            caseBateauAdv = p.getJoueur2().getBoats().get(0).getPosition();
+        }
+        else{
+            caseBateauAdv = p.getJoueur1().getBoats().get(0).getPosition();
+        }
         int d;
         int dAdv;
         int temp = 1000;

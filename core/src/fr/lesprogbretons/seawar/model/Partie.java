@@ -4,6 +4,7 @@ import fr.lesprogbretons.seawar.model.actions.Action;
 import fr.lesprogbretons.seawar.model.boat.Boat;
 import fr.lesprogbretons.seawar.model.cases.Case;
 import fr.lesprogbretons.seawar.model.map.Grille;
+import fr.lesprogbretons.seawar.model.map.MapTournoi1;
 import fr.lesprogbretons.seawar.model.map.RandomMap;
 
 import java.io.Serializable;
@@ -54,7 +55,7 @@ public class Partie implements Serializable {
     
     //Constructeurs
     public Partie() {
-        map = new RandomMap(11, 13);
+        map = new MapTournoi1(11, 13);
         joueur1 = map.getJoueur1();
         joueur2 = map.getJoueur2();
         currentPlayer = joueur1;

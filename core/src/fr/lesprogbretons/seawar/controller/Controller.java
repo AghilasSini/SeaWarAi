@@ -299,7 +299,7 @@ public class Controller {
         }
 
         // pass the turn without doing nothing
-        actions.add(new PassTurn(boat));
+       // actions.add(new PassTurn(boat));
 
         // change the cannon
         actions.add(new ChangeCannon(boat));

@@ -1,6 +1,19 @@
 package fr.lesprogbretons.seawar.model.map;
 
 import fr.lesprogbretons.seawar.ia.IAAleatoire;
+import fr.lesprogbretons.seawar.ia.ia_seawar_a.PerfectAI;
+import fr.lesprogbretons.seawar.ia.ia_seawar_b.AlphaBeta;
+import fr.lesprogbretons.seawar.ia.ia_seawar_b.RechercheEltIA;
+import fr.lesprogbretons.seawar.ia.ia_seawar_c.IAAlphaBeta;
+import fr.lesprogbretons.seawar.ia.ia_seawar_d.AB;
+import fr.lesprogbretons.seawar.ia.ia_seawar_e.GitGud;
+import fr.lesprogbretons.seawar.ia.ia_seawar_f.IAGroupeF;
+import fr.lesprogbretons.seawar.ia.ia_seawar_g.IA_Groupe_G;
+import fr.lesprogbretons.seawar.ia.ia_seawar_h.IA;
+import fr.lesprogbretons.seawar.ia.ia_seawar_i.IAPhare;
+import fr.lesprogbretons.seawar.ia.ia_seawar_j.IACreole;
+import fr.lesprogbretons.seawar.ia.ia_seawar_k.IA_K;
+import fr.lesprogbretons.seawar.ia.ia_seawar_l.IAAdvanced;
 import fr.lesprogbretons.seawar.model.Orientation;
 import fr.lesprogbretons.seawar.model.Player;
 import fr.lesprogbretons.seawar.model.boat.Amiral;
@@ -17,15 +30,82 @@ import java.util.ArrayList;
  * Classe Grille
  */
 public class Grille implements Serializable {
-
+	 
 
     //Bateaux
     ArrayList<Boat> bateaux1;
     ArrayList<Boat> bateaux2;
+	
+	//public static Player defaultPlayer1 = new IAAleatoire(1,"IAA",new ArrayList<Boat>());
+	//public static Player defaultPlayer2 = new IAAleatoire(2,"IAA",new ArrayList<Boat>());
+	
+	
+
     //Joueurs
-//    private Player joueur1 = new Player(1);
-    private Player joueur1 = new IAAleatoire(1, "IAAleatoire1", bateaux1);
-    private Player joueur2 = new IAAleatoire(2, "IAAleatoire2", bateaux2);
+    //    private Player joueur1 = new Player(1);
+	private Player joueur1 = new IAAleatoire(1, "IAA", new ArrayList<Boat>());
+	/* Groupe  A */
+	//private Player joueur1 = new PerfectAI(1, "IAA", new ArrayList<Boat>());
+	/* Groupe  B  */
+	//private Player joueur1 = new RechercheEltIA(1, "IAA", new ArrayList<Boat>());
+	/* Groupe  C */
+	// private Player joueur1 = new IAAlphaBeta(1, "IAA", new ArrayList<Boat>());
+	/* Groupe  D */
+	//private Player joueur1 = new AB(1, "IAA", new ArrayList<Boat>());
+	/* Groupe  E */
+	//private Player joueur1 = new GitGud(1, "IAA", new ArrayList<Boat>());
+	/* Groupe  F */
+    //private Player joueur1 = new IAGroupeF(1, "IAA", new ArrayList<Boat>());
+	/* Groupe  G */
+    //private Player joueur1 = new IA_Groupe_G(1, "IAA", new ArrayList<Boat>());
+	/* Groupe  H */
+	//private Player joueur1 = new IA(1, "IAA", new ArrayList<Boat>());
+	/* Groupe  I */
+	//private Player joueur1 = new IAPhare(1,"IAA",new ArrayList<Boat>());
+	/* Groupe  J */
+	//private Player joueur1 = new IACreole(1, "IAA", new ArrayList<Boat>());
+	/* Groupe  K */
+	//private Player joueur1 = new IA_K(1, "IAA", new ArrayList<Boat>());
+	/* Groupe  L */
+	//private Player joueur1 = new IAAdvanced(1,"IAA",new ArrayList<Boat>());
+
+    
+      
+      
+      //private Player joueur2 = new IAAleatoire(2,"IAA",new ArrayList<Boat>());
+	/* Groupe  A */
+//    private Player joueur2 = new PerfectAI(2,"IAA",new ArrayList<Boat>());
+  	/* Groupe  B  */
+//      private Player joueur2 = new AlphaBeta(2,"IAA",new ArrayList<Boat>());
+  	/* Groupe  C */
+      private Player joueur2 = new IAAlphaBeta(2,"IAA",new ArrayList<Boat>());
+  	/* Groupe  D */
+//      private Player joueur2 = new AB(2,"IAA",new ArrayList<Boat>());
+  	/* Groupe  E */
+//     private Player joueur2 = new GitGud(2,"IAA",new ArrayList<Boat>());
+  	/* Groupe  F */
+//      private Player joueur2 = new IAGroupeF(2,"IAA",new ArrayList<Boat>());
+  	/* Groupe  G */
+//      private Player joueur2 = new IA_Groupe_G(2,"IAA",new ArrayList<Boat>());
+  	/* Groupe  H */
+//      private Player joueur2 = new IA(2,"IAA",new ArrayList<Boat>());
+  	/* Groupe  I */
+//      private Player joueur2 = new IAPhare(2,"IAA",new ArrayList<Boat>());
+  	/* Groupe  J */
+//      private Player joueur2 = new IACreole(2,"IAA",new ArrayList<Boat>());
+  	/* Groupe  K */
+//      private Player joueur2 = new IA_K(2,"IAA",new ArrayList<Boat>());
+  	/* Groupe  L */
+//      private Player joueur2 = new IAAdvanced(2,"IAA",new ArrayList<Boat>());
+      
+      
+      
+      
+      
+//    private Player joueur1 = defaultPlayer1;
+//    private Player joueur2 = defaultPlayer2;
+//    private Player joueur1;
+//    private Player joueur2;
 
 
     //Cases de la Grille
@@ -42,8 +122,9 @@ public class Grille implements Serializable {
     public Grille(int hauteur, int largeur) {
         this.hauteur = hauteur;
         this.largeur = largeur;
-        bateaux1 = new ArrayList<>();
-        bateaux2 = new ArrayList<>();
+     
+        bateaux1 = (ArrayList<Boat>) joueur1.getBoats();
+        bateaux2 = (ArrayList<Boat>) joueur2.getBoats();
         //
         //
         joueur1.setBoats(bateaux1);
@@ -634,5 +715,9 @@ public class Grille implements Serializable {
             c.setPossedePhare(joueur);
             joueur.setPharesPossedes(joueur.getPharesPossedes() + 1);
         }
+    }
+
+    public Case[][] getTableau(){
+        return this.tableau;
     }
 }

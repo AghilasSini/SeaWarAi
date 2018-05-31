@@ -12,7 +12,9 @@ import static fr.lesprogbretons.seawar.SeaWar.seaWarController;
  * Inspiré par PixelScientists
  */
 public class SeaWarMenuScreen extends ScreenAdapter {
-
+	
+	
+	
     @Override
     public void show() {
         seaWarController.nouvellePartie();
