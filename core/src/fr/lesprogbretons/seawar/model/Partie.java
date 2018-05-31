@@ -2,6 +2,7 @@ package fr.lesprogbretons.seawar.model;
 
 import fr.lesprogbretons.seawar.model.actions.Action;
 import fr.lesprogbretons.seawar.model.boat.Boat;
+import fr.lesprogbretons.seawar.model.cases.Case;
 import fr.lesprogbretons.seawar.model.map.Grille;
 import fr.lesprogbretons.seawar.model.map.RandomMap;
 
@@ -48,6 +49,9 @@ public class Partie implements Serializable {
     // actions
     private List<Action> actions;
 
+    // groupe l
+    private List<Case>  listPhares ;
+    
     //Constructeurs
     public Partie() {
         map = new RandomMap(11, 13);
@@ -398,4 +402,31 @@ public class Partie implements Serializable {
             return false;
         }
     }
+    
+    
+    public List<Case> loadListPhares() {
+        int hauteur = getMap().getHauteur() ;
+        int largeur = getMap().getLargeur() ;
+        List<Case>  l = new ArrayList<>() ;
+        for(int i = 0 ; i< hauteur ; i++){
+            for (int j= 0 ; j< largeur ; j++){
+                if(getMap().getCase(i,j).isPhare()) {
+                    if(getMap().getCase(i,j).getPossedePhare() == null){
+                        l.add(getMap().getCase(i,j) );
+                    } else if(getMap().getCase(i,j).getPossedePhare().getNumber() != getCurrentPlayer().getNumber()){
+                        l.add(getMap().getCase(i,j) );
+                    }
+                }
+            }
+        }
+        return l ;
+    }
+
+    public List<Case> getListPhares() {
+        return listPhares;
+    }
+    
+    
+    
+    
 }
